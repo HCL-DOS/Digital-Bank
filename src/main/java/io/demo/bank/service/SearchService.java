@@ -52,8 +52,8 @@ public class SearchService {
 				
 		// Add query parameters for authentication credentials
 		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(SearchService.apiBaseUrl)
-		                					.queryParam("zip", zipcode)
-		                					.queryParam("radius", "10");
+		                					.queryParam("zip", zipcode);
+		                					//.queryParam("radius", "10");
 		
 		LOG.debug("ATM Location Request: " + uriBuilder.toUriString());
 		
