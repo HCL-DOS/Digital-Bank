@@ -51,8 +51,8 @@ public class SearchService {
 		List<AtmLocation> results = new ArrayList<AtmLocation>();
 				
 		// Add query parameters for authentication credentials
-		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(SearchService.apiBaseUrl)
-		                					.queryParam("zip", zipcode);
+		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(SearchService.apiBaseUrl);
+		                					//.queryParam("zip", zipcode);
 		                					//.queryParam("radius", "10");
 		
 		LOG.debug("ATM Location Request: " + uriBuilder.toUriString());
