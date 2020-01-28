@@ -6,3 +6,5 @@ An example Spring MVC application that has an HTML5 web interface. The applicati
 - Docker Container for Distribution (https://hub.docker.com/r/asburymr/digitalbank)
 
 Running automated tests on Windows requires Firefox Quantum (64-bit) to be installed 
+
+1
