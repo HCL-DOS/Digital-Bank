@@ -7,4 +7,4 @@ An example Spring MVC application that has an HTML5 web interface. The applicati
 
 Running automated tests on Windows requires Firefox Quantum (64-bit) to be installed 
 
-1
+0
