@@ -152,6 +152,13 @@ public class DefaultData implements CommandLineRunner, Ordered {
 			accountTypeRepository.saveAll(accountTypes);			
 		}
 		
+		
+		LOG.info("** Setting Min Deposit...");
+		AccountType accountType =new AccountType();
+		accountType.setId((long) 10);
+		accountType.setMinDeposit(new BigDecimal(45.00));
+		LOG.info("** Finished Setting Min Deposit...");
+		
 		// Load Ownership Types if they do not exist
 		if (ownershipTypeRepository.findByCode("IND") == null) {
 			
