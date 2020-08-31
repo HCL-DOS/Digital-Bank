@@ -159,7 +159,7 @@ public class DefaultData implements CommandLineRunner, Ordered {
 		
 		AccountType accountType = accountTypeRepository.findByCode("SAV");
 		accountType.setMinDeposit(new BigDecimal(45.00));
-				
+		accountTypeRepository.save(accountType);		
 		LOG.info("** Finished Setting Min Deposit...");
 		
 		}
