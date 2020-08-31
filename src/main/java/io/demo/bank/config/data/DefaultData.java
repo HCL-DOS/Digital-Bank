@@ -153,20 +153,12 @@ public class DefaultData implements CommandLineRunner, Ordered {
 		}
 		
 		
-		if (accountTypeRepository.findByCode("SAV") != null) {
-			
-			LOG.info("** Setting Min Deposit...");
-			List<AccountType> accountTypes = new ArrayList<AccountType>();
-			AccountType accountType =new AccountType();
-			accountType.setId((long) 10);
-			accountTypes.remove(accountType);
-			
-			accountTypes.add(new AccountType("SAV", "SAV", "Savings", 1.85, new BigDecimal(45.00), new BigDecimal(25.00), new BigDecimal(10.00)));
-			
-			LOG.info("** Finished Setting Min Deposit...");
-			accountTypeRepository.saveAll(accountTypes);	
+		LOG.info("** Setting Min Deposit...");
 		
-		}
+		AccountType accountType = accountTypeRepository.findByCode("SAV");
+		accountType.setMinDeposit(new BigDecimal(45.00));
+		
+		LOG.info("** Finished Setting Min Deposit...");
 		
 		// Load Ownership Types if they do not exist
 		if (ownershipTypeRepository.findByCode("IND") == null) {
