@@ -153,13 +153,16 @@ public class DefaultData implements CommandLineRunner, Ordered {
 		}
 		
 		
-		if (accountTypeRepository.findByCode("SAV") != null) {
+		//Update Min Deposit of SAVings account if its not equal to a specific value
+		BigDecimal minDeposit = new BigDecimal(45.00);
+		if (accountTypeRepository.findByCode("SAV").getMinDeposit() != minDeposit) {
 		
 		LOG.info("** Setting Min Deposit...");
 		
 		AccountType accountType = accountTypeRepository.findByCode("SAV");
-		accountType.setMinDeposit(new BigDecimal(45.00));
-		accountTypeRepository.save(accountType);		
+		accountType.setMinDeposit(minDeposit);
+		accountTypeRepository.save(accountType);
+				
 		LOG.info("** Finished Setting Min Deposit...");
 		
 		}
